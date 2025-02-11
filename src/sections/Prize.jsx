@@ -14,7 +14,7 @@ import prize from "../Assets/prize.svg";
 import stars from "../Assets/stars.png";
 const Prize = () => {
   return (
-    <div className="bg-black  w-screen flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8">
+    <div className="bg-[#121214] w-screen flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8">
       <div className='mb-10 sm:mb-20'>
         <img src={prize} alt="" className="w-full max-w-xs sm:max-w-md" />
       </div>

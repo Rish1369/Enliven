@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+/* @import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -69,15 +71,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
 @font-face {
   font-family: 'Black Future';
-  src: url('./font/Black.otf') format('truetype');
+  src: url('/fonts/font.otf') format('opentype'); /* ✅ Correct absolute path */
   font-weight: normal;
   font-style: normal;
 }
 
 
-/* Apply to specific elements */
 .custom-text {
   font-family: 'Black Future', sans-serif;
 }
