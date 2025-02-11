@@ -13,8 +13,8 @@ const AboutCard = ({ data }) => {
       />
       
       {/* Card Content */}
-      <div className="relative w-[1258px] h-[552px] p-8 bg-[#15151b]/40 backdrop-blur-md text-white overflow-hidden border border-[#3F3F3F] rounded-[30px] z-10">
-        <div className='flex items-center justify-center gap-[2rem]'>
+      <div className="relative w-[] md:w-[78.625rem] md:h-[34.5rem] p-8 bg-[#15151b]/40 backdrop-blur-md text-white overflow-hidden border border-[#3F3F3F] rounded-[30px] z-10">
+        <div className='flex flex-col md:flex-row items-center justify-center gap-[2rem]'>
           <CardHeading 
             text="ENLIVEN 2025" 
             bgColor="#5a4412" 
@@ -30,7 +30,7 @@ const AboutCard = ({ data }) => {
         {/* Main Content */}
         <div className="space-y-16">
           {data.content.map((item, index) => (
-            <p key={index} className="text-[2rem] font-mono text-center leading-relaxed">
+            <p key={index} className="text-[1rem] md:text-[2rem] font-mono  text-left md:text-center leading-relaxed">
               {item.text.split(' ').map((word, i) => (
                 item.highlight.includes(word) ? (
                   <span key={i} className="text-amber-500">{word} </span>
