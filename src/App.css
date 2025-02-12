@@ -3,4 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'Black Future';
+  src: url('/fonts/Black.otf') format('opentype'); /* Use absolute path */
+  font-weight: normal;
+  font-style: normal;
 }
