@@ -23,8 +23,12 @@ const aboutData = {
 
 const About = () => {
   return (
-    <div className="min-h-screen w-full flex p-4 items-center flex-col bg-[#121214] gap-20">
+    <div className="min-h-screen w-full flex p-4 items-center flex-col  gap-20 overflow-hidden">
+    <div className="w-full max-w-[1200px] mx-auto">
+      <div className='flex items-center justify-center mb-[5rem]'>
+
       <Heading text="About"/>
+      </div>
       <div className="relative w-full max-w-[1258px]">
         <img 
           src={Mars} 
@@ -33,6 +37,7 @@ const About = () => {
         />
         <AboutCard data={aboutData} />
       </div>
+    </div>
     </div>
   );
 };
