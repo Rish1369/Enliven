@@ -2,7 +2,7 @@ import React from "react";
 
 const Track = ({ globe, e1, e2, track, money }) => {
   return (
-    <div className="w-80 z-10 transform transition-transform duration-300 ease-in-out hover:scale-110 cursor-pointer">
+    <div className="w-80 z-10 transform transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer overflow-y-hidden">
       <div className="w-45 h-45 rounded-full ml-30 -mb-40">
         <img src={globe} alt="Globe" className="w-full h-full object-cover" />
         <div className="-mt-35 -ml-25">
