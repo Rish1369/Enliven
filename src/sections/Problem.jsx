@@ -1,27 +1,25 @@
 import React from 'react';
 import InfoCard from '../components/InfoCard';
-import './stars.css'; // Import the CSS file for stars
 
-const generateStars = (numStars) => {
-    return Array.from({ length: numStars }, (_, i) => (
-      <div
-        key={i}
-        className="star"
-        style={{
-          "--random-x": Math.random(),
-          "--random-y": Math.random(),
-          "--random-speed": Math.random(),
-        }}
-      ></div>
-    ));
-};
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const Problem = () => {
     return (
         <div className="relative bg-black min-h-screen px-4 py-12 overflow-hidden">
-            {/* Stars Background */}
-            <div className="stars-container">
-                {generateStars(250)} {/* Generates 250 stars */}
+            
+            {/* Background Stars Layer */}
+            <div className="absolute inset-0 w-full h-full pointer-events-none">
+                <SparklesCore
+                    id="tsparticles-problem"
+                    background="transparent"
+                    minSize={0.6}
+                    maxSize={1.4}
+                    particleDensity={100}
+                    className="w-full h-full"
+                    particleColor="#FFFFFF"
+                />
+                <ShootingStars className="absolute inset-0 w-full h-full" />
             </div>
 
             {/* Problem Statements Heading */}
@@ -34,16 +32,16 @@ const Problem = () => {
             {/* Info Cards Section */}
             <div className="flex flex-col gap-10 items-center relative z-10">
                 <div className="flex flex-col sm:flex-row justify-center gap-12">
-                    <InfoCard/>
-                    <InfoCard/>
+                    <InfoCard />
+                    <InfoCard />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-center gap-12">
-                    <InfoCard/>
-                    <InfoCard/>
+                    <InfoCard />
+                    <InfoCard />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-center gap-12">
-                    <InfoCard/>
-                    <InfoCard/>
+                    <InfoCard />
+                    <InfoCard />
                 </div>
             </div>
         </div>

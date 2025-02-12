@@ -1,57 +1,75 @@
-import React from 'react'
-import gdsc from "../Assets/gdsc.png"
+import React from "react";
+import gdsc from "../Assets/gdsc.svg";
 import discord from "../Assets/discord.svg";
-import instagram from "../Assets/instagram.png";
-import facebook from "../Assets/facebook.png";
-import twitter from "../Assets/twitter.png";
+import instagram from "../Assets/instagram.svg";
+import facebook from "../Assets/facebook.svg";
+import twitter from "../Assets/twitter.svg";
 
-const generateStars = (numStars) => {
-    return Array.from({ length: numStars }, (_, i) => (
-      <div
-        key={i}
-        className="star"
-        style={{
-          "--random-x": Math.random(),
-          "--random-y": Math.random(),
-          "--random-speed": Math.random(),
-        }}
-      ></div>
-    ));
-  };
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { SparklesCore } from "@/components/ui/sparkles";
 
-const Footer = () =>{
-    return(
-        <div className="relative bg-black  px-4 pt-1 overflow-hidden">
-            <div className="stars-container">
-                {generateStars(250)} {/* Increased star count to 250 */}
-            </div>
-            <div className='flex flex-col justify-center'> 
-                <div className='flex justify-center '><img src={gdsc} alt="" /></div>
-                <div className='flex justify-center text-[25px]'>Google Developer Student Clubs</div>
-                <div className='flex justify-center text-[16px]'>Army Institute of Technology, Pune</div>
-            </div>
-            <div>
-                <div className=' flex custom-text text-[21px] pt-15'>
-                    <div className='flex gap-12 ml-6'>
-                    <span className='cursor'>HOME</span>
-                    <span>ABOUT</span>
-                    <span>TIMELINE</span>
-                    <span>PRIZES</span>
-                    <span>THEMES</span>
-                    <span>PS</span>
-                    <span>SPONSORS</span>
-                    </div>  
-                    <div className='ml-96 pl-15 flex flex-roww gap-4 cursor'>
-                        <a href=""><img src={discord} alt="" /></a>
-                        <a href=""><img src={instagram} alt="" /></a>
-                        <a href=""><img src={facebook} alt="" /></a>
-                        <a href=""><img src={twitter} alt="" /></a>
-                    </div>
-                </div>
-                <div className='flex justify-center pt-6'><div  className='w-[98%] bg-[#C3C3C3] h-[1px] '></div></div>
-                <div  className='flex justify-center pt-8 pb-8'><div>Made With ❤️ by Team GDG AIT Pune 2024-25</div></div>
-            </div>
+const Footer = () => {
+  return (
+    <div className="relative bg-black px-4 pt-4 overflow-hidden text-white">
+      {/* Stars Background */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
+        <SparklesCore
+          id="tsparticles-footer"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+        <ShootingStars className="absolute inset-0 w-full h-full" />
+      </div>
+
+      {/* GDSC Logo & Title */}
+      <div className="flex flex-col items-center relative z-10">
+        <img src={gdsc} alt="GDSC Logo" className="w-32 md:w-40" />
+        <h2 className="text-lg md:text-2xl font-bold text-center">
+          Google Developer Student Clubs
+        </h2>
+        <p className="text-sm md:text-base text-gray-300">
+          Army Institute of Technology, Pune
+        </p>
+      </div>
+
+      {/* Navigation Links */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between mt-6 ml-9">
+        <div className="flex flex-wrap justify-center custom-text gap-6 md:gap-12">
+          {["home", "about", "timeline", "prizes", "themes", "ps", "sponsors"].map((section) => (
+            <span
+              key={section}
+              className="cursor-pointer hover:text-yellow-400 transition-all"
+            >
+              {section.toUpperCase()}
+            </span>
+          ))}
         </div>
-    );
-}
+
+        {/* Social Media Links */}
+        <div className="flex gap-4 mt-6 md:mt-0 mr-9">
+          {[discord, instagram, facebook, twitter].map((icon, index) => (
+            <a key={index} href="#" className="hover:opacity-75 transition">
+              <img src={icon} alt="social-icon" className="w-6 md:w-8" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="flex justify-center pt-6">
+        <div className="w-[95%] bg-gray-400 h-[1px]"></div>
+      </div>
+
+      {/* Footer Text */}
+      <div className="flex justify-center pt-6 pb-6 text-gray-400 text-center">
+        Made With ❤️ by Team GDG AIT Pune 2024-25
+      </div>
+    </div>
+  );
+};
+
 export default Footer;

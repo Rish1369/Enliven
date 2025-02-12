@@ -2,6 +2,9 @@ import React from 'react';
 import './stars.css'; // Import the CSS for stars
 import ThemeCard from '../components/themeCard';
 
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { SparklesCore } from "@/components/ui/sparkles";
+
 import themes from "../Assets/themes.svg";
 import saturn from "../Assets/saturn.png";
 import theme1 from "../Assets/theme1.png";
@@ -10,32 +13,28 @@ import theme3 from "../Assets/theme3.png";
 import theme4 from "../Assets/theme4.png";
 import theme5 from "../Assets/theme5.png";
 
-const generateStars = (numStars) => {
-  return Array.from({ length: numStars }, (_, i) => (
-    <div
-      key={i}
-      className="star"
-      style={{
-        "--random-x": Math.random(),
-        "--random-y": Math.random(),
-        "--random-speed": Math.random(),
-      }}
-    ></div>
-  ));
-};
-
 const Themes = () => {
     return (
-        <div className="bg-black w-screen flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 relative">
+        <div className="bg-black w-screen flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 relative min-h-screen">
 
-            {/* Moving Stars Background */}
-            <div className="stars-container">
-                {generateStars(250)} {/* Increased star count to 250 */}
+            {/* Background Stars Layer */}
+            <div className="absolute inset-0 w-full h-full pointer-events-none">
+                <SparklesCore
+                    id="tsparticles-themes"
+                    background="transparent"
+                    minSize={0.6}
+                    maxSize={1.4}
+                    particleDensity={100}
+                    className="w-full h-full"
+                    particleColor="#FFFFFF"
+                />
+                <ShootingStars className="absolute inset-0 w-full h-full" />
             </div>
 
-            {/* Header Image */}
-            <div className="flex justify-center pt-25 mb-10 sm:mb-20 relative z-10">
-                <img src={themes} alt="Themes" className="w-3/4 sm:w-auto" />
+            <div className="flex justify-center pt-10 mb-15 relative z-10">
+                <div className="border-2 w-full max-w-[370px] border-yellow-500 text-yellow-400 text-xl md:text-2xl lg:text-3xl custom-text font-bold px-6 py-2 rounded-full uppercase tracking-wide bg-black text-center">
+                    Themes
+                </div>
             </div>
 
             {/* Theme Cards Section */}
