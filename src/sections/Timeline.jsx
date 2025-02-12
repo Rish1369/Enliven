@@ -1,3 +1,4 @@
+// Timeline.jsx
 import React from 'react';
 import TimeLineComponent from '@/components/TimeLineComponent';
 import { SparklesCore } from '@/components/ui/sparkles';
@@ -10,48 +11,27 @@ const Timeline = () => {
     { dateText: "16 February - 20 February", eventText: "REACT BOOTCAMP" },
     { dateText: "21 February - 25 February", eventText: "BLOCKCHAIN WORKSHOP" },
   ];
-
+ 
   return (
-    <>
-      <div className="relative bg-[#121214] min-h-screen w-full flex flex-col items-center overflow-hidden">
-        {/* Sparkles in Background */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <SparklesCore
-            id="tsparticlesfullpage"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={100}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-        </div>
-
-        {/* Shooting Stars */}
-        <div className="absolute inset-0 z-20">
-          <ShootingStars className="w-full h-full" />
-        </div>
-
-        {/* Timeline Content */}
-        <div className="relative z-10 w-full flex flex-col items-center">
+    <div className="relative min-h-screen w-full overflow-hidden"> 
+     <div className="relative z-30 min-h-screen w-full flex flex-col items-center justify-center px-4">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center">
           <div className="font-mono flex items-center text-[20px] md:text-[30px] font-bold text-[#FFB400] justify-center h-[4rem] w-[10rem] md:h-[5rem] md:w-[14rem] bg-[#18181F] rounded-4xl border-[3px] border-[#FFB400]">
             TIMELINE
           </div>
           
-          <div className="w-full flex items-center justify-center overflow-hidden mt-[5rem]">
-            <div>
-              {data.map((event, index) => (
-                <TimeLineComponent 
-                  key={index} 
-                  dateText={event.dateText} 
-                  eventText={event.eventText} 
-                />
-              ))}
-            </div>
+          <div className="w-full flex flex-col items-center mt-[5rem]">
+            {data.map((event, index) => (
+              <TimeLineComponent
+                key={index}
+                dateText={event.dateText}
+                eventText={event.eventText}
+              />
+            ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
