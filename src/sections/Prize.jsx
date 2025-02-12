@@ -38,7 +38,7 @@ const Prize = () => {
 
       <div className="flex justify-center pt-10 mb-15 relative z-10">
         <div className="border-2 w-auto border-yellow-500 text-yellow-400 text-[30px] custom-text font-bold px-6 py-2 rounded-full uppercase tracking-wide bg-black text-center">
-          Prize
+          Prizes
         </div>
       </div>
 
