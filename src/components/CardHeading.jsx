@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const CardHeading = ({ text, bgColor, borderColor }) => {
   return (
@@ -15,10 +14,5 @@ const CardHeading = ({ text, bgColor, borderColor }) => {
   );
 };
 
-CardHeading.propTypes = {
-  text: PropTypes.string.isRequired,
-  bgColor: PropTypes.string.isRequired,
-  borderColor: PropTypes.string.isRequired,
-};
 
 export default CardHeading;
