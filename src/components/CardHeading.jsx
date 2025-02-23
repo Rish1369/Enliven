@@ -15,7 +15,6 @@ const CardHeading = ({ text, bgColor, borderColor }) => {
   );
 };
 
-// Adding PropTypes for validation
 CardHeading.propTypes = {
   text: PropTypes.string.isRequired,
   bgColor: PropTypes.string.isRequired,
