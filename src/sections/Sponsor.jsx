@@ -7,8 +7,6 @@ import { SparklesCore } from "@/components/ui/sparkles";
 const Sponsor = () => {
     return (
         <div className="relative bg-black min-h-screen px-4 py-12 overflow-hidden">
-            
-            {/* Background Stars Layer */}
             <div className="absolute inset-0 w-full h-full pointer-events-none">
                 <SparklesCore
                     id="tsparticles-sponsor"
@@ -21,15 +19,11 @@ const Sponsor = () => {
                 />
                 <ShootingStars className="absolute inset-0 w-full h-full" />
             </div>
-
-            {/* Sponsors Heading */}
             <div className="flex justify-center pt-10 mb-15 relative z-10">
                 <div className="border-2 w-full max-w-[370px] border-yellow-500 text-yellow-400 text-xl md:text-2xl lg:text-3xl custom-text font-bold px-6 py-2 rounded-full uppercase tracking-wide bg-black text-center">
                     SPONSORS
                 </div>
             </div>
-
-            {/* Platinum Sponsor */}
             <div className='flex justify-center relative z-10'>
                 <div className='custom-text text-[#A3A3A3] text-2xl md:text-4xl lg:text-5xl'>PLATINUM SPONSOR</div>
             </div>
@@ -38,8 +32,6 @@ const Sponsor = () => {
                 <Sponsors />
                 <Sponsors />
             </div>
-
-            {/* Gold Sponsor */}
             <div className='flex justify-center pt-10 relative z-10'>
                 <div className='custom-text text-[#FFEF5A] text-2xl md:text-4xl lg:text-5xl'>GOLD SPONSOR</div>
             </div>
@@ -48,8 +40,6 @@ const Sponsor = () => {
                 <Sponsors />
                 <Sponsors />
             </div>
-
-            {/* Food Sponsor */}
             <div className='flex justify-center pt-10 relative z-10'>
                 <div className='custom-text text-white text-2xl md:text-4xl lg:text-5xl'>FOOD SPONSOR</div>
             </div>
