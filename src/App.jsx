@@ -7,7 +7,6 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { SparklesCore } from "@/components/ui/sparkles";
 import Themes from "./sections/Themes";
 import Problem from "./sections/Problem";
-import Sponsor from "./sections/Sponsor";
 import FAQSection from "./sections/FAQSection";
 import Footer from "./sections/Footer";
 
@@ -62,10 +61,6 @@ const App = () => {
 
         <div className="relative">
           <Problem/>
-        </div>
-
-        <div className="relative">
-          <Sponsor/>
         </div>
 
         <div className="relative">
